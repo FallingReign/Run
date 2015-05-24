@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Run</name>
+    <description></description>
+    <version>1</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>1i4hg0lw9holy</unique-id>
+    <saved-with-version>20000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML 5" />
+    </configurations>
+    <window-size>
+        <width>1080</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Fullscreen in browser">Off</prop>
+        <prop name="Preview browser">(default)</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Player" sid="9482271791680102">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="5203463815346167">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="7838080360754437">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1938661037881022" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\Marmalade\assets\green-man.png">
+                        <collision-poly>
+                            <point x="0.335938" y="0.664063" />
+                            <point x="0.25" y="0.5" />
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.21875" />
+                            <point x="0.695313" y="0.304688" />
+                            <point x="0.75" y="0.5" />
+                            <point x="0.671875" y="0.671875" />
+                            <point x="0.5" y="0.921875" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.5" y="0.078125" />
+                            <point x="0.671875" y="0.328125" />
+                            <point x="0.75" y="0.5" />
+                            <point x="0.695313" y="0.695313" />
+                            <point x="0.5" y="0.78125" />
+                            <point x="0.25" y="0.75" />
+                            <point x="0.25" y="0.5" />
+                            <point x="0.335938" y="0.335938" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="7870129261535654">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Text" sid="3275127238210858">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GrassBackground" sid="7602034245161308">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\Marmalade\assets\grass-background.png" />
+        </object-type>
+        <object-type name="Tree" sid="4184010583384034">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4978137501823404" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\Marmalade\assets\tree-04.png">
+                        <collision-poly>
+                            <point x="0.208333" y="0.208333" />
+                            <point x="0.5" y="0.0654762" />
+                            <point x="0.821429" y="0.178571" />
+                            <point x="0.934524" y="0.5" />
+                            <point x="0.794643" y="0.794643" />
+                            <point x="0.5" y="0.934524" />
+                            <point x="0.208333" y="0.791667" />
+                            <point x="0.0654762" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="3" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable comment="Desired Frames Per Second" constant="0" name="dfps" sid="6941913050050868" static="0" type="number">60</variable>
+        <comment>When holing the up arrow, accelerate at the angle the player is currently pointing at.</comment>
+        <event-block sid="5312282865049284">
+            <conditions>
+                <condition id="2" name="Key is down" sid="9395306684953492" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="4886538197244861" type="System">
+                    <param id="0" name="First value">Player.CustomMovement.Speed</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">300</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="2" name="Set speed" sid="6055329885068224" type="Player">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="Speed">300</param>
+                </action>
+                <action id="0" name="Set text" sid="5322410099085897" type="Text">
+                    <param id="0" name="Text">Player.CustomMovement.Speed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2575945502139927">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3913495507590913" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="4" name="Accelerate toward angle" sid="3752681124908998" type="Player">
+                    <param id="0" name="Acceleration">1000 * dfps * dt</param>
+                    <param id="1" name="Angle">Self.Angle</param>
+                </action>
+                <action id="6" name="Set speed" sid="2937183789496195" type="Player">
+                    <param id="0" name="Speed">Player.CustomMovement.Speed/100</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>When no keys are held reverse acceleration</comment>
+        <event-block sid="5976203203121817">
+            <conditions>
+                <condition id="2" inverted="1" name="Key is down" sid="5009334398653652" type="Keyboard">
+                    <param id="0" name="Key">38 (Up arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="3" name="Accelerate" sid="9804128481205339" type="Player">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="Acceleration"> -1000 * dfps * dt</param>
+                </action>
+                <action id="0" name="Set text" sid="6316154872380235" type="Text">
+                    <param id="0" name="Text">Player.CustomMovement.Speed</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4737772451059827">
+                    <conditions>
+                        <condition behavior="CustomMovement" id="1" name="Compare speed" sid="780672318584472" type="Player">
+                            <param id="0" name="Which">0</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Speed">20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="862751149284116" type="Player">
+                            <param id="0" name="Which">0</param>
+                            <param id="1" name="Speed">0</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="2143945048733811" type="Player">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Rotate the player&apos;s angle with left and right.</comment>
+        <event-block sid="9953728600304124">
+            <conditions>
+                <condition id="2" name="Key is down" sid="9469101238004101" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-19" name="Rotate counter-clockwise" sid="4440719992376566" type="Player">
+                    <param id="0" name="Degrees">(300/(Player.CustomMovement.Speed+1)+150) * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4025461844415057">
+            <conditions>
+                <condition id="2" name="Key is down" sid="5448461771560984" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-19" name="Rotate counter-clockwise" sid="309174645374496" type="Player">
+                    <param id="0" name="Degrees">-(300/(Player.CustomMovement.Speed+1)+150) * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8396960898126339">
+            <conditions>
+                <condition id="-29" name="On load complete" sid="311444962525378" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Start" sid="3355958624694965" type="Player">
+                    <param id="0" name="From">0</param>
+                </action>
+                <action id="6" name="Set speed" sid="332259636044475" type="Player">
+                    <param id="0" name="Speed">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
